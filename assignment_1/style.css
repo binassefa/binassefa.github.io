@@ -1,0 +1,118 @@
+.header {
+    background-color: #B3A882;
+    margin-bottom: 15px;
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.head-image, .head-title {
+    display: flex; 
+}
+
+h1{
+    font-family: 'Oxanium';
+    color: #FFFBED;
+    font-weight: bold;
+}
+
+h2{
+    font-family: 'Oxanium';
+    font-weight: normal;
+}
+
+body {
+    font-family: serif;
+    background-color: #7077B3;
+}
+
+ul, p, li, ol{
+    font-family: serif;
+    color: black;
+  }
+
+  
+.wrapper {
+    display: flex;
+    justify-content: center;
+}
+
+.content {
+    max-width: 960px;
+    padding-bottom: 20px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.profile {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 4px;
+}
+
+.role {
+    font-style: italic;
+    font-weight: bold;
+    margin-top: 15px;
+}
+
+.description {
+    font-style: normal;
+    font-weight: normal;
+    margin-bottom: 2px;
+    word-wrap: break-word;
+}
+
+.objectives {
+    font-family: serif;
+    background-color: #FFF6D4;
+    margin: 20px;
+    padding: 10px;
+    border-radius: 4px;
+}
+.con-1 {
+    margin-right: 20px;
+    flex-basis: 30%;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.con-2{
+    max-width:100%;
+    border: 1px solid #2D080A;
+    border-radius: 4px;
+    background-color: #FFF6D4;
+    padding-left: 20px;
+    padding-right: 20px;
+    flex-basis: 60%;
+    max-width: 60%; 
+}
+
+@media only screen and (max-width: 1000px) {
+    .content {
+        max-width: 960px;
+        display: flex;
+        justify-content: center;
+    }
+
+    .con-1 {
+        margin-bottom: 20px;
+        flex-basis: 100%;
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: space-evenly;
+        align-items: center;
+    }
+
+    .con-1A {
+        max-width: 30%;
+    }
+
+    .con-2{
+        flex-basis: 100%;
+    }
+    
+  
+}
