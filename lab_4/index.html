@@ -28,7 +28,40 @@
       function clickMe() {
         const content = document.querySelector(".content");
         content.innerHTML = "Hello world";
-      }
+
+        /* Variables */
+        const myName = 'Biniyam Assefa';
+        var split_name = myName.split(" ");
+        var f_name = split_name[0]
+        var l_name = split_name[1]
+        var totalName = f_name.length + l_name.length
+        var up3 = myName[2].toUpperCase();
+        let lastThree = myName.substr(myName.length - 3);
+    
+        /*Heading*/
+        let myHead = document.querySelector('.header');
+        myHead.textContent = "Biniyam Assefa's " + "Lab 4 " +  totalName;
+
+        /* Paragraph 1*/
+        let p1 = document.createElement('p');
+        p1.className = "NameLength";
+        let p1Text = 'My name has ' + totalName + ' characters.';
+        let t1 = document.createTextNode(p1Text);
+        p1.appendChild(t1);
+        document.querySelector('.content').appendChild(p1);
+
+        /* Paragraph 2*/
+        let p2 = document.createElement('p');
+        p2.setAttribute('class', '');
+        p2.className = "ThirdLetter";
+        let p2Text = 'The 3rd letter in my name is ' + up3 + '.';
+        p2.appendChild(document.createTextNode(p2Text));
+        p2.appendChild(document.createElement('br'));
+        let pl2 = 'The last 3 letters are ' + lastThree;
+        p2.appendChild(document.createTextNode(pl2));
+        document.querySelector('.content').appendChild(p2);  
+    }
+
     </script>
   </body>
 </html>
