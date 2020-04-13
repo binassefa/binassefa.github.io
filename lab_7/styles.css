@@ -67,6 +67,8 @@ h3 {
 }
 
 .content {
+  width: 600px; 
+  height: 600px;
   background: #fff;
   border: 2px dotted #444;
   flex-grow: 2;
@@ -100,4 +102,11 @@ h3 {
 .activate:active {
   position: relative;
   top: 1px;
+}
+
+@media only screen and (max-width: 1000px) {
+  .content {
+      flex-direction: column;
+      justify-content: center;
+  }
 }

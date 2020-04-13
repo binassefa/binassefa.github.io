@@ -15,19 +15,66 @@
       crossorigin=""
     ></script>
   </head>
-
   <body>
     <div class="container">
       <div class="wrapper">
         <div class="header">Frontend Libraries: Maps Lab</div>
-        <div class="content">
-          When your lab is done, this should be replaced with a stylish map.
+        <div class="content" id="mapID">
+          <!-- When your lab is done, this should be replaced with a stylish map. -->
         </div>
         <div class="footer">Make some markers work!</div>
       </div>
     </div>
     <script>
-        /* Your lab code can go here, or in an external file you include */
+      const pgMap = L.map("mapID").setView([38.989, -76.94], 9);
+
+      L.tileLayer(
+        "https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}",
+        {
+          attribution:
+            'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
+          maxZoom: 18,
+          id: "mapbox/streets-v11",
+          tileSize: 512,
+          zoomOffset: -1,
+          accessToken:
+            "pk.eyJ1IjoicGFyYXNkZXYiLCJhIjoiY2s4aXUyOW83MDJteDNlcDh6b21tM25xZSJ9.XgYLMecUx-EsR-ofnu5PDw"
+        }
+      ).addTo(pgMap);
+
+      let mapFood = [
+        ["VOCELLI PIZZA",-76.863207, 38.959434],
+        ["JAPAN EXPRESS",-76.926831, 38.794257],
+        ["ANGELS CARRYOUT",-76.903073, 38.932167]
+      ];
+
+      L.marker([38.986171, -76.945045])
+        .addTo(pgMap)
+        .bindPopup("McKeldin Library")
+        .openPopup(false);
+
+      L.marker([mapFood[0][2], mapFood[0][1]])
+        .addTo(pgMap)
+        .bindPopup(mapFood[0][0]);
+
+      L.marker([mapFood[1][2], mapFood[1][1]])
+        .addTo(pgMap)
+        .bindPopup(mapFood[1][0]);
+
+      L.marker([mapFood[2][2], mapFood[2][1]])
+        .addTo(pgMap)
+        .bindPopup(mapFood[2][0]);
+
+      let popup = L.popup();
+
+      function onMapClick(e) {
+        popup
+          .setLatLng(e.latlng)
+          .setContent("You clicked the map at " + e.latlng.toString())
+          .openOn(pgMap);
+      }
+
+      pgMap.on("click", onMapClick);
     </script>
   </body>
 </html>
