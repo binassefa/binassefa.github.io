@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Charts Lab</title>
+    <link rel="stylesheet" type="text/css" href="./styles.css" />
+    <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+  </head>
+  <body>
+    <div class="container">
+      <div class="wrapper">
+        <div class="header">Frontend Libraries: Charts Lab</div>
+        <div class="content">
+          When your lab is done, this should be replaced with a useful chart full of food data.
+        </div>
+        <div class="footer">Let's eat out in the future!</div>
+      </div>
+    </div>
+    <script>
+      fetch(' https://data.princegeorgescountymd.gov/resource/umjn-t2iz.json') // replace this with the food safety data set
+      .then((response) => {
+        console.log("response information", response);
+        return response;
+      })
+      .then((data) => data.json()) // this is an "implicit return" - we're returning the results of the Fetch request to the next step.
+        .then((data) => { // this is an explicit return. If I want my information to go further, I'll need to use the "return" keyword before the brackets close
+          console.log(data);
+          // return data; // <- this will pass the data to the next "then" statement when I'm ready.
+        })
+    </script>
+  </body>
+</html>
